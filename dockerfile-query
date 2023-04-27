@@ -1,0 +1,20 @@
+FROM python:3.9
+WORKDIR /APP
+
+COPY . ./
+
+RUN pip3 install --upgrade pip
+
+RUN pip3 install jwt
+RUN pip3 install boto3
+RUN pip3 install fastapi
+
+
+
+RUN apt update -y
+RUN apt upgrade -y
+RUN apt install curl -y
+
+EXPOSE 80
+
+ENTRYPOINT ['python', 'Booking-Query.py']
