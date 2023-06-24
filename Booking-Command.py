@@ -3,14 +3,13 @@ import os
 import uuid
 from enum import Enum
 import jwt
-
 import boto3
 from boto3.dynamodb.conditions import Key
-from pydantic import BaseModel
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 
 import uvicorn
 
@@ -54,7 +53,7 @@ def book(request:request_model):
 
     table_name= os.getenv("tableName")
     client = boto3.resource("dynamodb")
-    table = client.Table("Booking")
+    table = client.Table(table_name)
     table.put_item(Item=booking)
 
     return JSONResponse(status_code=200, content=json.dumps({"Status":BookingStatus.Pending}))
