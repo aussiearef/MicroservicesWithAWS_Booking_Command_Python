@@ -15,6 +15,8 @@ View the entire course here:
 
 ## Usage
 
-You must go through the course and build the microservices as well as their reletive APIs. Then use the demo website ![Hotel Booking System ](https://github.com/aussiearef/HotelBooking)
+You must complete the course and build the microservices and their reactive APIs. Then use the demo website ["Hotel Booking System"](https://github.com/aussiearef/HotelBooking)
+
+
 
 
